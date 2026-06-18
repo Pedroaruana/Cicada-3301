@@ -1,0 +1,11 @@
+.claude/
+__pycache__/
+*.pyc
+*.pyo
+.env
+venv/
+env/
+*.egg-info/
+dist/
+.DS_Store
+Thumbs.db
