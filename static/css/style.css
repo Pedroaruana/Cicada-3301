@@ -69,6 +69,21 @@ body {
   color: rgba(255, 255, 255, 0.35);
   margin-bottom: 48px;
   text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.typewriter {
+  overflow: hidden;
+  white-space: nowrap;
+  width: 0;
+  animation: typing 2.8s steps(30, end) 0.8s forwards;
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to   { width: 30ch; }
 }
 
 .cursor {
