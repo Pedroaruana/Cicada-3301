@@ -140,3 +140,33 @@ body {
 .btn-comecar {
   animation: pulse-border 2.5s ease-in-out infinite;
 }
+
+/* responsividade mobile */
+@media (max-width: 480px) {
+  .cicada-img {
+    width: 80vw;
+    margin-bottom: -6px;
+  }
+
+  .titulo {
+    letter-spacing: 10px;
+    margin-bottom: 16px;
+  }
+
+  .subtitulo {
+    font-size: 9px;
+    letter-spacing: 3px;
+    margin-bottom: 36px;
+  }
+
+  .typewriter {
+    animation: typing 2.8s steps(30, end) 0.8s forwards;
+    max-width: 90vw;
+  }
+
+  .btn-comecar {
+    padding: 12px 36px;
+    font-size: 11px;
+    letter-spacing: 4px;
+  }
+}
