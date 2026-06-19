@@ -141,6 +141,119 @@ body {
   animation: pulse-border 2.5s ease-in-out infinite;
 }
 
+/* ── página de instruções ── */
+.doc-page {
+  background: #f5f0e8;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  font-family: 'IM Fell English', 'Georgia', serif;
+}
+
+.doc-frame {
+  max-width: 640px;
+  width: 100%;
+  background: #faf7f0;
+  border: 2px solid #1a1a1a;
+  box-shadow:
+    4px 4px 0 #1a1a1a,
+    inset 0 0 0 6px #faf7f0,
+    inset 0 0 0 8px #1a1a1a;
+  padding: 48px 52px 40px;
+  position: relative;
+}
+
+.doc-ornament {
+  text-align: center;
+  font-size: 11px;
+  letter-spacing: 2px;
+  color: #1a1a1a;
+  opacity: 0.4;
+}
+
+.doc-ornament.top  { margin-bottom: 32px; }
+.doc-ornament.bottom { margin-top: 32px; margin-bottom: 28px; }
+
+.doc-body {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.doc-body p {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #1a1a1a;
+  text-align: justify;
+}
+
+.letra-vermelha {
+  font-size: 52px;
+  color: #8b0000;
+  float: left;
+  line-height: 0.8;
+  margin-right: 6px;
+  margin-top: 6px;
+  font-style: italic;
+}
+
+.vermelho {
+  color: #8b0000;
+  font-style: italic;
+}
+
+.doc-assinatura {
+  font-style: italic;
+  margin-top: 8px;
+}
+
+.doc-numero {
+  text-align: center;
+  font-size: 28px;
+  letter-spacing: 8px;
+  color: #8b0000;
+  font-style: italic;
+  margin-top: 4px;
+}
+
+.doc-dicas {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-left: 8px;
+  border-left: 2px solid #8b0000;
+  margin: 4px 0;
+}
+
+.doc-dicas li {
+  font-size: 15px;
+  color: #1a1a1a;
+  line-height: 1.6;
+}
+
+.btn-fase1 {
+  display: block;
+  text-align: center;
+  padding: 14px 0;
+  border: 2px solid #1a1a1a;
+  color: #1a1a1a;
+  text-decoration: none;
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 12px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  background: transparent;
+  transition: background 0.3s, color 0.3s;
+}
+
+.btn-fase1:hover {
+  background: #1a1a1a;
+  color: #faf7f0;
+}
+
 /* responsividade mobile */
 @media (max-width: 480px) {
   .cicada-img {
