@@ -11,6 +11,14 @@ def index():
 def instrucoes():
     return render_template('instrucoes.html')
 
+@app.route('/fase/1')
+def fase1():
+    return render_template('fase1.html')
+
+@app.route('/fase/x7k2m9q3p5r8t4v6wz')
+def fase2():
+    return render_template('fase2.html')
+
 if __name__ == '__main__':
     import os
     port = int(os.environ.get('PORT', 5000))

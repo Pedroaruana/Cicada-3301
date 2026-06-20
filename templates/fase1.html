@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block title %}??? — Cicada 3301{% endblock %}
+
+{% block content %}
+<main class="fase-page">
+
+  <div class="fase-topo-esq">
+    <span class="fase-transmissao">// TRANSMISSÃO RECEBIDA //</span>
+    <span class="fase-numero">01<span class="fase-total">/05</span></span>
+    <div class="dica-wrapper">
+      <button class="dica-btn" onclick="toggleDica()">?</button>
+      <div class="dica-menu" id="dicaMenu">
+        <p>CÓDIGOS BINÁRIOS. UTILIZE UM DECODIFICADOR BINÁRIO PARA OBTER O LINK DA PRÓXIMA FASE.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="fase-centro">
+    <pre class="binario-principal">00101111 01100110 01100001 01110011
+01100101 00101111 01111000 00110111
+01101011 00110010 01101101 00111001
+01110001 00110011 01110000 00110101
+01110010 00111000 01110100 00110100
+01110110 00110110 01110111 01111010</pre>
+  </div>
+
+</main>
+
+<script>
+  function toggleDica() {
+    const menu = document.getElementById('dicaMenu');
+    menu.classList.toggle('aberto');
+  }
+
+  document.addEventListener('click', function(e) {
+    const wrapper = document.querySelector('.dica-wrapper');
+    if (!wrapper.contains(e.target)) {
+      document.getElementById('dicaMenu').classList.remove('aberto');
+    }
+  });
+</script>
+{% endblock %}
