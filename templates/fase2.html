@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block title %}??? — Cicada 3301{% endblock %}
+
+{% block content %}
+<main class="fase-page fase-page--clara">
+
+  <div class="fase-topo-esq fase-topo-esq--escuro">
+    <span class="fase-transmissao fase-transmissao--escuro">// TRANSMISSÃO RECEBIDA //</span>
+    <span class="fase-numero fase-numero--escuro">02<span class="fase-total fase-total--escuro">/05</span></span>
+    <div class="dica-wrapper">
+      <button class="dica-btn dica-btn--escuro" onclick="toggleDica()">?</button>
+      <div class="dica-menu" id="dicaMenu">
+        <p>NEM TUDO QUE SE VÊ NUMA IMAGEM ESTÁ VISÍVEL. USE UMA FERRAMENTA DE ESTEGANOGRAFIA ONLINE.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="fase2-conteudo">
+    <div class="fase2-img-wrapper">
+      <img src="{{ url_for('static', filename='img/liberdade.png') }}" alt="" class="fase2-imagem">
+      <a href="{{ url_for('static', filename='img/liberdade.png') }}" download class="btn-download" title="Baixar imagem">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+          <polyline points="7 10 12 15 17 10"/>
+          <line x1="12" y1="15" x2="12" y2="3"/>
+        </svg>
+      </a>
+    </div>
+  </div>
+
+</main>
+
+<script>
+  function toggleDica() {
+    const menu = document.getElementById('dicaMenu');
+    menu.classList.toggle('aberto');
+  }
+
+  document.addEventListener('click', function(e) {
+    const wrapper = document.querySelector('.dica-wrapper');
+    if (!wrapper.contains(e.target)) {
+      document.getElementById('dicaMenu').classList.remove('aberto');
+    }
+  });
+</script>
+{% endblock %}
