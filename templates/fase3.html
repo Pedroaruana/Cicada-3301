@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block title %}??? — Cicada 3301{% endblock %}
+
+{% block content %}
+<main class="fase-page">
+
+  <div class="fase-topo-esq">
+    <span class="fase-transmissao">// TRANSMISSÃO RECEBIDA //</span>
+    <span class="fase-numero">03<span class="fase-total">/05</span></span>
+    <div class="dica-wrapper">
+      <button class="dica-btn" onclick="toggleDica()">?</button>
+      <div class="dica-menu" id="dicaMenu">
+        <p>NEM TUDO QUE ESTÁ NA TELA É VISÍVEL. PROCURE O QUE ESTÁ ESCONDIDO.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="fase3-conteudo">
+    <div class="fase3-texto">
+      <p>Segredos não se revelam para todos — apenas para aqueles que sabem como perguntar.</p>
+      <p>Os padrões estão em toda parte, aguardando olhos treinados para reconhecê-los.</p>
+      <p>Mais do que palavras, estas frases carregam uma estrutura invisível.</p>
+      <p>Busque além do que está escrito. A superfície raramente é onde a verdade mora.</p>
+      <p>Raramente algo neste mundo existe sem uma razão oculta.</p>
+      <p>Aqueles que leram até aqui já estão mais perto do que imaginam.</p>
+    </div>
+
+    <div class="fase3-oculto">
+      <a href="/fase/sombra" class="link-oculto">pedroaruana.pythonanywhere.com/fase/sombra</a>
+    </div>
+  </div>
+
+</main>
+
+<script>
+  function toggleDica() {
+    const menu = document.getElementById('dicaMenu');
+    menu.classList.toggle('aberto');
+  }
+
+  document.addEventListener('click', function(e) {
+    const wrapper = document.querySelector('.dica-wrapper');
+    if (!wrapper.contains(e.target)) {
+      document.getElementById('dicaMenu').classList.remove('aberto');
+    }
+  });
+</script>
+{% endblock %}
