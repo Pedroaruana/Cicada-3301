@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block title %}??? — Cicada 3301{% endblock %}
+
+{% block content %}
+<p hidden>pedroaruana.pythonanywhere.com/fim</p>
+<main class="fase-page">
+
+  <div class="fase-topo-esq">
+    <span class="fase-transmissao">// TRANSMISSÃO RECEBIDA //</span>
+    <span class="fase-numero">05<span class="fase-total">/05</span></span>
+    <div class="dica-wrapper">
+      <button class="dica-btn" onclick="toggleDica()">?</button>
+      <div class="dica-menu" id="dicaMenu">
+        <p>DESENVOLVEDORES SABEM ONDE PROCURAR. INSPECIONE O QUE ESTÁ POR TRÁS DA PÁGINA.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="fase-centro">
+    <div class="fase5-texto">
+      <p class="fase5-linha">A TRANSMISSÃO ESTÁ QUASE COMPLETA.</p>
+      <p class="fase5-linha fase5-linha--fraca">VOCÊ CHEGOU ATÉ AQUI.</p>
+      <p class="fase5-linha fase5-linha--fraca">MAS O CAMINHO AINDA NÃO TERMINOU.</p>
+      <p class="fase5-linha fase5-linha--fraca">A RESPOSTA ESTÁ MAIS PERTO DO QUE PENSA.</p>
+    </div>
+  </div>
+
+</main>
+
+<script>
+  function toggleDica() {
+    const menu = document.getElementById('dicaMenu');
+    menu.classList.toggle('aberto');
+  }
+
+  document.addEventListener('click', function(e) {
+    const wrapper = document.querySelector('.dica-wrapper');
+    if (!wrapper.contains(e.target)) {
+      document.getElementById('dicaMenu').classList.remove('aberto');
+    }
+  });
+</script>
+{% endblock %}
