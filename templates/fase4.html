@@ -1,0 +1,89 @@
+{% extends "base.html" %}
+
+{% block title %}??? — Cicada 3301{% endblock %}
+
+{% block content %}
+<main class="fase-page">
+
+  <div class="fase-topo-esq">
+    <span class="fase-transmissao">// TRANSMISSÃO RECEBIDA //</span>
+    <span class="fase-numero">04<span class="fase-total">/05</span></span>
+    <div class="dica-wrapper">
+      <button class="dica-btn" onclick="toggleDica()">?</button>
+      <div class="dica-menu" id="dicaMenu">
+        <p>ALGO ESTÁ ESCONDIDO NESTE SINAL. AJUSTE OS CONTROLES ATÉ REVELAR.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="fase4-conteudo">
+    <div class="fase4-img-wrapper">
+      <img id="imagemSinal" src="{{ url_for('static', filename='img/fase4_hidden.png') }}" alt="" class="fase4-imagem">
+      <span class="texto-copiavel">pedroaruana.pythonanywhere.com/fase/nexus</span>
+    </div>
+
+    <div class="fase4-controles">
+      <div class="controle-item">
+        <label class="controle-label">BRILHO</label>
+        <input type="range" class="controle-slider" id="brilho" min="0" max="300" value="100">
+        <span class="controle-valor" id="valBrilho">100%</span>
+      </div>
+      <div class="controle-item">
+        <label class="controle-label">CONTRASTE</label>
+        <input type="range" class="controle-slider" id="contraste" min="0" max="1000" value="100">
+        <span class="controle-valor" id="valContraste">100%</span>
+      </div>
+      <div class="controle-item">
+        <label class="controle-label">EXPOSIÇÃO</label>
+        <input type="range" class="controle-slider" id="exposicao" min="0" max="200" value="100">
+        <span class="controle-valor" id="valExposicao">100%</span>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<script>
+  const img = document.getElementById('imagemSinal');
+  const brilhoSlider = document.getElementById('brilho');
+  const contrasteSlider = document.getElementById('contraste');
+  const exposicaoSlider = document.getElementById('exposicao');
+
+  function atualizarFiltro() {
+    const b = parseInt(brilhoSlider.value);
+    const c = parseInt(contrasteSlider.value);
+    const e = parseInt(exposicaoSlider.value);
+
+    document.getElementById('valBrilho').textContent = b + '%';
+    document.getElementById('valContraste').textContent = c + '%';
+    document.getElementById('valExposicao').textContent = e + '%';
+
+    img.style.filter = `brightness(${b}%) contrast(${c}%) saturate(${e}%)`;
+
+    const texto = document.querySelector('.texto-copiavel');
+    const combinacaoCorreta = b >= 95 && b <= 105 && c >= 700 && c <= 750;
+
+    if (combinacaoCorreta) {
+      texto.classList.add('ativo');
+    } else {
+      texto.classList.remove('ativo');
+    }
+  }
+
+  brilhoSlider.addEventListener('input', atualizarFiltro);
+  contrasteSlider.addEventListener('input', atualizarFiltro);
+  exposicaoSlider.addEventListener('input', atualizarFiltro);
+
+  function toggleDica() {
+    const menu = document.getElementById('dicaMenu');
+    menu.classList.toggle('aberto');
+  }
+
+  document.addEventListener('click', function(e) {
+    const wrapper = document.querySelector('.dica-wrapper');
+    if (!wrapper.contains(e.target)) {
+      document.getElementById('dicaMenu').classList.remove('aberto');
+    }
+  });
+</script>
+{% endblock %}

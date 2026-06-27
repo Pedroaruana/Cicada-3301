@@ -471,6 +471,103 @@ body {
   cursor: default;
 }
 
+/* ── fase 4 (imagem + sliders) ── */
+.fase4-conteudo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  width: 100%;
+  padding: 40px 20px;
+}
+
+.fase4-img-wrapper {
+  position: relative;
+  display: inline-block;
+  line-height: 0;
+}
+
+.texto-copiavel {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: transparent;
+  background: transparent;
+  font-family: 'Courier New', monospace;
+  font-size: clamp(8px, 1.4vw, 16px);
+  white-space: nowrap;
+  user-select: none;
+  pointer-events: none;
+  cursor: default;
+  letter-spacing: 1px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.texto-copiavel.ativo {
+  opacity: 1;
+  color: rgba(200, 200, 200, 0.85);
+  user-select: text;
+  pointer-events: auto;
+  cursor: text;
+}
+
+.fase4-imagem {
+  max-width: min(900px, 92vw);
+  width: 100%;
+  display: block;
+  image-rendering: pixelated;
+}
+
+.fase4-controles {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: min(500px, 90vw);
+}
+
+.controle-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.controle-label {
+  font-size: 10px;
+  letter-spacing: 3px;
+  color: rgba(255,255,255,0.4);
+  width: 90px;
+  flex-shrink: 0;
+}
+
+.controle-slider {
+  flex: 1;
+  -webkit-appearance: none;
+  appearance: none;
+  height: 1px;
+  background: rgba(255,255,255,0.2);
+  outline: none;
+  cursor: pointer;
+}
+
+.controle-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 12px;
+  height: 12px;
+  background: #fff;
+  cursor: pointer;
+}
+
+.controle-valor {
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: rgba(255,255,255,0.3);
+  width: 40px;
+  text-align: right;
+}
+
 /* responsividade mobile */
 @media (max-width: 480px) {
   .cicada-img {
