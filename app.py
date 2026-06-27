@@ -31,6 +31,10 @@ def fase4():
 def fase5():
     return render_template('fase5.html')
 
+@app.route('/fim')
+def fim():
+    return render_template('fim.html')
+
 if __name__ == '__main__':
     import os
     port = int(os.environ.get('PORT', 5000))
