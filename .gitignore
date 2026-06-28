@@ -9,3 +9,11 @@ env/
 dist/
 .DS_Store
 Thumbs.db
+
+# arquivos soltos / nao usados no projeto
+/Cicada 3301 poster in Seoul.webp
+/Cicada_3301_logo.jpg
+/Screen-Shot-2019-02-12-at-5.24.10-PM.png
+/img.jpg
+/liberdade-guiando-o-povo-1.jpg
+/the-cicada-3301-mystery-v0-yz3rzbo0es4g1.webp

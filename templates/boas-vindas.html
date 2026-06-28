@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block title %}3301 — Em Todo Lugar{% endblock %}
+
+{% block content %}
+<main class="bv-page">
+  <div class="bv-frame">
+
+    <div class="bv-topo">
+      <p class="bv-frase">ESTAMOS EM TODO LUGAR.</p>
+      <p class="bv-frase bv-frase--fraca">AO MESMO TEMPO. O TEMPO TODO.</p>
+      <p class="bv-frase bv-frase--destaque">SEJA BEM-VIND(A)O.</p>
+    </div>
+
+    <div class="bv-grid">
+      <div class="bv-row">
+        <img src="{{ url_for('static', filename='img/sidney.png') }}" alt="" class="bv-img">
+        <img src="{{ url_for('static', filename='img/florida.png') }}" alt="" class="bv-img">
+      </div>
+      <div class="bv-row">
+        <img src="{{ url_for('static', filename='img/paris.png') }}" alt="" class="bv-img">
+        <img src="{{ url_for('static', filename='img/poland.png') }}" alt="" class="bv-img">
+      </div>
+    </div>
+
+  </div>
+</main>
+{% endblock %}
