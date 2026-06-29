@@ -642,6 +642,26 @@ body {
     inset 0 0 0 7px rgba(255,255,255,0.2);
 }
 
+.bv-botao {
+  position: absolute;
+  right: 18px;
+  bottom: 14px;
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 3px;
+  color: rgba(255,255,255,0.55);
+  text-decoration: none;
+  padding: 6px 14px;
+  border: 1px solid rgba(255,255,255,0.3);
+  transition: color 0.25s, border-color 0.25s, background 0.25s;
+}
+
+.bv-botao:hover {
+  color: #fff;
+  border-color: #fff;
+  background: rgba(255,255,255,0.06);
+}
+
 .bv-topo {
   flex-shrink: 0;
   display: flex;
