@@ -1,0 +1,95 @@
+{% extends "base.html" %}
+
+{% block title %}3301 — Certificado{% endblock %}
+
+{% block head %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+{% endblock %}
+
+{% block content %}
+<main class="cert-page">
+
+  <div class="cert-folha" id="certificado">
+
+    <div class="cert-borda">
+
+      <div class="cert-header">
+        <img src="{{ url_for('static', filename='img/logo.jpg') }}" alt="" class="cert-logo">
+        <div class="cert-header-texto">
+          <p class="cert-org">CICADA 3301</p>
+        </div>
+      </div>
+
+      <div class="cert-ornament">✦ ── ── ── ── ── ── ── ── ✦ ── ── ── ── ── ── ── ── ✦</div>
+
+      <p class="cert-titulo">CERTIFICADO DE CONCLUSÃO</p>
+
+      <div class="cert-corpo">
+        <p>A mente por trás do nome</p>
+        <p class="cert-nome">{{ nome }}</p>
+        <p class="cert-local">{{ cidade }}, {{ estado }} — {{ pais }}</p>
+        <p class="cert-texto">
+          provou ser diferente. Onde outros viram ruído, você encontrou padrão.
+          Onde outros desistiram, você persistiu. Cinco camadas de silêncio
+          foram quebradas — e apenas quem pensa além do óbvio chega até aqui.
+        </p>
+        <p class="cert-texto">
+          Este documento reconhece que <strong>não existe barreira intelectual
+          que você não possa ultrapassar.</strong> O mundo precisa de mentes assim.
+          Agora você faz parte.
+        </p>
+      </div>
+
+      <div class="cert-ornament">✦ ── ── ── ── ── ── ── ── ✦ ── ── ── ── ── ── ── ── ✦</div>
+
+      <div class="cert-rodape">
+        <div class="cert-data">
+          <p class="cert-data-label">DATA DE EMISSÃO</p>
+          <p class="cert-data-valor">{{ data }}</p>
+        </div>
+        <div class="cert-assinatura">
+          <p class="cert-assinatura-nome">Satoshi Nakamoto</p>
+          <div class="cert-assinatura-linha"></div>
+          <p class="cert-assinatura-cargo">先導者 — O QUE VEM ANTES</p>
+        </div>
+      </div>
+
+      <p class="cert-numero">3301</p>
+
+    </div>
+
+  </div>
+
+  <div class="cert-acoes">
+    <button class="cert-download" onclick="baixarPDF()">BAIXAR PDF</button>
+    <a href="/confidencial" class="cert-download cert-avancar">AVANÇAR</a>
+  </div>
+
+</main>
+
+<script>
+  function baixarPDF() {
+    const el = document.getElementById('certificado');
+    const btn = document.querySelector('.cert-download');
+    btn.textContent = 'GERANDO...';
+    btn.disabled = true;
+
+    html2canvas(el, {
+      scale: 2,
+      backgroundColor: '#0a0a0a',
+      useCORS: true
+    }).then(function(canvas) {
+      const { jsPDF } = window.jspdf;
+      const pdf = new jsPDF('landscape', 'mm', 'a4');
+      const imgData = canvas.toDataURL('image/jpeg', 0.95);
+      const w = pdf.internal.pageSize.getWidth();
+      const h = pdf.internal.pageSize.getHeight();
+      pdf.addImage(imgData, 'JPEG', 0, 0, w, h);
+      pdf.save('certificado-3301.pdf');
+      btn.textContent = 'BAIXAR PDF';
+      btn.disabled = false;
+    });
+  }
+</script>
+{% endblock %}

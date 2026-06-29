@@ -1,4 +1,5 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
+from datetime import datetime
 
 app = Flask(__name__)
 app.secret_key = 'cicada-3301-secret'
@@ -42,6 +43,18 @@ def boas_vindas():
 @app.route('/fazer-parte')
 def fazer_parte():
     return render_template('fazer-parte.html')
+
+@app.route('/certificado', methods=['POST'])
+def certificado():
+    nome = request.form.get('nome', '')
+    pais = request.form.get('pais', '')
+    estado = request.form.get('estado', '')
+    cidade = request.form.get('cidade', '')
+    data = datetime.now().strftime('%d/%m/%Y')
+    return render_template('certificado.html',
+                           nome=nome, pais=pais, estado=estado,
+                           cidade=cidade, data=data)
+
 
 if __name__ == '__main__':
     import os
