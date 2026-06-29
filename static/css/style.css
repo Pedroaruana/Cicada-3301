@@ -727,6 +727,114 @@ body {
   color: rgba(255,255,255,0.3);
 }
 
+/* ── página fazer-parte (formulário) ── */
+.fp-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+.fp-frame {
+  max-width: 520px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 40px 36px;
+  border: 2px solid rgba(255,255,255,0.4);
+  box-shadow: inset 0 0 0 6px transparent, inset 0 0 0 7px rgba(255,255,255,0.12);
+}
+
+.fp-logo {
+  width: 80px;
+  opacity: 0.7;
+  filter: invert(1);
+}
+
+.fp-titulo {
+  font-size: 18px;
+  letter-spacing: 6px;
+  color: rgba(255,255,255,0.9);
+  text-align: center;
+}
+
+.fp-subtitulo {
+  font-size: 12px;
+  letter-spacing: 2px;
+  color: rgba(255,255,255,0.35);
+  text-align: center;
+  margin-top: -10px;
+}
+
+.fp-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.fp-campo {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.fp-campo label {
+  font-size: 10px;
+  letter-spacing: 3px;
+  color: rgba(255,255,255,0.45);
+}
+
+.fp-campo input {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.2);
+  color: #fff;
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 14px;
+  padding: 10px 14px;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.fp-campo input:focus {
+  border-color: rgba(255,255,255,0.6);
+}
+
+.fp-campo input::placeholder {
+  color: rgba(255,255,255,0.15);
+}
+
+.fp-linha-dupla {
+  display: flex;
+  gap: 12px;
+}
+
+.fp-linha-dupla .fp-campo {
+  flex: 1;
+}
+
+.fp-btn {
+  margin-top: 8px;
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.4);
+  color: rgba(255,255,255,0.7);
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 13px;
+  letter-spacing: 4px;
+  padding: 12px;
+  cursor: pointer;
+  transition: color 0.3s, border-color 0.3s, background 0.3s;
+}
+
+.fp-btn:hover {
+  color: #fff;
+  border-color: #fff;
+  background: rgba(255,255,255,0.06);
+}
+
 /* responsividade mobile */
 @media (max-width: 480px) {
   .cicada-img {

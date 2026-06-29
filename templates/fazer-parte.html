@@ -4,9 +4,35 @@
 
 {% block content %}
 <main class="fp-page">
-  <div class="fp-conteudo">
-    <p class="fp-titulo">FAZER PARTE</p>
-    <p class="fp-linha">Em breve.</p>
+  <div class="fp-frame">
+
+    <img src="{{ url_for('static', filename='img/logo.jpg') }}" alt="" class="fp-logo">
+
+    <p class="fp-titulo">REGISTRO DE CONCLUSÃO</p>
+    <p class="fp-subtitulo">Preencha seus dados para gerar seu certificado oficial.</p>
+
+    <form action="/certificado" method="POST" class="fp-form">
+      <div class="fp-campo">
+        <label for="nome">NOME COMPLETO</label>
+        <input type="text" id="nome" name="nome" required placeholder="Seu nome completo">
+      </div>
+      <div class="fp-campo">
+        <label for="pais">PAÍS</label>
+        <input type="text" id="pais" name="pais" required placeholder="Ex: Brasil">
+      </div>
+      <div class="fp-linha-dupla">
+        <div class="fp-campo">
+          <label for="estado">ESTADO</label>
+          <input type="text" id="estado" name="estado" required placeholder="Ex: São Paulo">
+        </div>
+        <div class="fp-campo">
+          <label for="cidade">CIDADE</label>
+          <input type="text" id="cidade" name="cidade" required placeholder="Ex: Campinas">
+        </div>
+      </div>
+      <button type="submit" class="fp-btn">GERAR CERTIFICADO</button>
+    </form>
+
   </div>
 </main>
 {% endblock %}
