@@ -1,0 +1,108 @@
+{% extends "base.html" %}
+
+{% block title %}3301 — ACESSO RESTRITO{% endblock %}
+
+{% block content %}
+<main class="conf-page">
+
+  <div class="conf-tela">
+
+    <div class="conf-linha conf-fade" data-delay="0">
+      <span class="conf-prompt">root@3301:~$</span> rastreando conexão...
+    </div>
+
+    <div class="conf-linha conf-fade" data-delay="1200">
+      <span class="conf-prompt">root@3301:~$</span> conexão identificada.
+    </div>
+
+    <div class="conf-bloco conf-fade" data-delay="2800">
+      <div class="conf-separador">── DADOS DO OPERADOR ──</div>
+      <div class="conf-dado">
+        <span class="conf-label">IP</span>
+        <span class="conf-valor" id="conf-ip">{{ ip }}</span>
+      </div>
+      <div class="conf-dado">
+        <span class="conf-label">NAVEGADOR</span>
+        <span class="conf-valor" id="conf-nav"></span>
+      </div>
+      <div class="conf-dado">
+        <span class="conf-label">SISTEMA</span>
+        <span class="conf-valor" id="conf-os"></span>
+      </div>
+      <div class="conf-dado">
+        <span class="conf-label">RESOLUÇÃO</span>
+        <span class="conf-valor" id="conf-res"></span>
+      </div>
+      <div class="conf-dado">
+        <span class="conf-label">IDIOMA</span>
+        <span class="conf-valor" id="conf-lang"></span>
+      </div>
+      <div class="conf-dado">
+        <span class="conf-label">FUSO HORÁRIO</span>
+        <span class="conf-valor" id="conf-tz"></span>
+      </div>
+      <div class="conf-dado">
+        <span class="conf-label">TIMESTAMP</span>
+        <span class="conf-valor" id="conf-time"></span>
+      </div>
+    </div>
+
+    <div class="conf-aviso conf-fade" data-delay="5000">
+      <div class="conf-separador">── TRANSMISSÃO CONFIDENCIAL ──</div>
+      <p class="conf-msg">As informações que você recebeu são <strong>estritamente confidenciais.</strong></p>
+      <p class="conf-msg">Qualquer tentativa de compartilhamento será <strong>detectada.</strong></p>
+      <p class="conf-msg">Sua localização, dispositivo e identidade digital já foram registrados.</p>
+    </div>
+
+    <div class="conf-final conf-fade" data-delay="7500">
+      <p class="conf-olho">👁</p>
+      <p class="conf-vigia">ESTAMOS SEMPRE DE OLHO.</p>
+      <p class="conf-codigo">3301</p>
+    </div>
+
+    <div class="conf-cursor conf-fade" data-delay="9000">
+      <span class="conf-prompt">root@3301:~$</span> <span class="conf-blink">█</span>
+    </div>
+
+  </div>
+
+</main>
+
+<script>
+(function() {
+  var ua = navigator.userAgent;
+  var nav = 'Desconhecido';
+  if (ua.indexOf('Chrome') > -1 && ua.indexOf('Edg') === -1) nav = 'Chrome';
+  else if (ua.indexOf('Firefox') > -1) nav = 'Firefox';
+  else if (ua.indexOf('Edg') > -1) nav = 'Edge';
+  else if (ua.indexOf('Safari') > -1) nav = 'Safari';
+
+  var os = 'Desconhecido';
+  if (ua.indexOf('Windows') > -1) os = 'Windows';
+  else if (ua.indexOf('Mac') > -1) os = 'macOS';
+  else if (ua.indexOf('Linux') > -1) os = 'Linux';
+  else if (ua.indexOf('Android') > -1) os = 'Android';
+  else if (ua.indexOf('iPhone') > -1 || ua.indexOf('iPad') > -1) os = 'iOS';
+
+  document.getElementById('conf-nav').textContent = nav + ' — ' + ua.split(') ').pop();
+  document.getElementById('conf-os').textContent = os;
+  document.getElementById('conf-res').textContent = screen.width + ' x ' + screen.height;
+  document.getElementById('conf-lang').textContent = (navigator.language || 'N/A').toUpperCase();
+  document.getElementById('conf-tz').textContent = Intl.DateTimeFormat().resolvedOptions().timeZone;
+
+  var agora = new Date();
+  document.getElementById('conf-time').textContent =
+    agora.toLocaleDateString('pt-BR') + ' — ' +
+    agora.toLocaleTimeString('pt-BR') + '.' +
+    String(agora.getMilliseconds()).padStart(3, '0');
+
+  var els = document.querySelectorAll('.conf-fade');
+  els.forEach(function(el) {
+    var delay = parseInt(el.getAttribute('data-delay'));
+    setTimeout(function() {
+      el.classList.add('conf-visivel');
+    }, delay);
+  });
+})();
+</script>
+{% endblock %}

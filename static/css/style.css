@@ -1037,3 +1037,175 @@ body {
   background: rgba(255,255,255,0.06);
 }
 
+/* ── página confidencial ── */
+.conf-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  background: #000;
+}
+
+.conf-tela {
+  max-width: 640px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  font-size: 13px;
+}
+
+.conf-fade {
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 0.8s, transform 0.8s;
+}
+
+.conf-visivel {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.conf-linha {
+  color: rgba(255,255,255,0.6);
+  letter-spacing: 1px;
+}
+
+.conf-prompt {
+  color: #00ff41;
+  margin-right: 8px;
+}
+
+.conf-separador {
+  text-align: center;
+  font-size: 10px;
+  letter-spacing: 4px;
+  color: rgba(255,255,255,0.2);
+  margin-bottom: 12px;
+}
+
+.conf-bloco {
+  border: 1px solid rgba(255,255,255,0.1);
+  padding: 20px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.conf-dado {
+  display: flex;
+  gap: 12px;
+}
+
+.conf-label {
+  min-width: 110px;
+  font-size: 10px;
+  letter-spacing: 3px;
+  color: #00ff41;
+  opacity: 0.6;
+}
+
+.conf-valor {
+  font-size: 12px;
+  color: rgba(255,255,255,0.7);
+  letter-spacing: 1px;
+  word-break: break-all;
+}
+
+.conf-aviso {
+  border: 1px solid rgba(255,0,0,0.2);
+  padding: 20px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.conf-aviso .conf-separador {
+  color: rgba(255,0,0,0.35);
+}
+
+.conf-msg {
+  font-size: 12px;
+  color: rgba(255,255,255,0.5);
+  letter-spacing: 1px;
+  line-height: 1.7;
+}
+
+.conf-msg strong {
+  color: rgba(255,80,80,0.9);
+}
+
+.conf-final {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.conf-olho {
+  font-size: 48px;
+  animation: conf-pulse 2s ease-in-out infinite;
+}
+
+@keyframes conf-pulse {
+  0%, 100% { opacity: 0.4; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.1); }
+}
+
+.conf-vigia {
+  font-size: 18px;
+  letter-spacing: 8px;
+  color: rgba(255,255,255,0.85);
+  text-align: center;
+}
+
+.conf-codigo {
+  font-size: 14px;
+  letter-spacing: 10px;
+  color: rgba(255,255,255,0.08);
+}
+
+.conf-cursor {
+  color: rgba(255,255,255,0.5);
+}
+
+.conf-blink {
+  animation: blink 1s step-start infinite;
+  color: #00ff41;
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
+/* responsividade mobile */
+@media (max-width: 480px) {
+  .cicada-img {
+    width: 80vw;
+    margin-bottom: -6px;
+  }
+
+  .titulo {
+    letter-spacing: 10px;
+    margin-bottom: 16px;
+  }
+
+  .subtitulo {
+    font-size: 9px;
+    letter-spacing: 3px;
+    margin-bottom: 36px;
+  }
+
+  .typewriter {
+    animation: typing 2.8s steps(30, end) 0.8s forwards;
+    max-width: 90vw;
+  }
+
+  .btn-comecar {
+    padding: 12px 36px;
+    font-size: 11px;
+    letter-spacing: 4px;
+  }
+}

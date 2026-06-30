@@ -55,6 +55,10 @@ def certificado():
                            nome=nome, pais=pais, estado=estado,
                            cidade=cidade, data=data)
 
+@app.route('/confidencial')
+def confidencial():
+    ip = request.headers.get('X-Forwarded-For', request.remote_addr)
+    return render_template('confidencial.html', ip=ip)
 
 if __name__ == '__main__':
     import os
