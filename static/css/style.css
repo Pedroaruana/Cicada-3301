@@ -1037,6 +1037,17 @@ body {
   background: rgba(255,255,255,0.06);
 }
 
+.cert-acoes {
+  display: flex;
+  gap: 16px;
+}
+
+.cert-avancar {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+
 /* ── página confidencial ── */
 .conf-page {
   min-height: 100vh;
