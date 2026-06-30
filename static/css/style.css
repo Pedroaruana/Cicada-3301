@@ -1191,6 +1191,26 @@ body {
   50% { opacity: 0; }
 }
 
+/* ── tracker HUD (timer + tentativas) ── */
+.tracker-hud {
+  position: fixed;
+  top: 16px;
+  right: 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 2px;
+  color: rgba(255,255,255,0.35);
+  z-index: 998;
+  pointer-events: none;
+}
+
+.tracker-sep {
+  color: rgba(255,255,255,0.15);
+}
+
 /* responsividade mobile */
 @media (max-width: 480px) {
   .cicada-img {
