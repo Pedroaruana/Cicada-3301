@@ -1,0 +1,12 @@
+.git
+.gitignore
+.pytest_cache
+__pycache__
+*.pyc
+.env
+.claude
+tests/
+*.md
+*.webp
+*.jpg
+!static/img/*.jpg
