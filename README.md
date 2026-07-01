@@ -7,8 +7,10 @@
 ![Flask](https://img.shields.io/badge/Flask-backend-lightgrey)
 ![HTML](https://img.shields.io/badge/HTML5-frontend-orange)
 ![CSS](https://img.shields.io/badge/CSS3-estilo-blue)
+![JavaScript](https://img.shields.io/badge/JavaScript-frontend-yellow)
 ![pytest](https://img.shields.io/badge/pytest-24%20testes-green)
 ![Docker](https://img.shields.io/badge/Docker-container-blue)
+![GitHub Actions](https://img.shields.io/badge/GitHub%20Actions-CI%2FCD-black)
 
 Demo ao vivo → [pedroaruana.pythonanywhere.com](https://pedroaruana.pythonanywhere.com)
 
